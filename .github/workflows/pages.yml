@@ -25,14 +25,7 @@ jobs:
           submodules: recursive
 
       - name: Clone Theme
-        run: git clone https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
-
-      - name: Build Theme
-        run: |
-          cd themes/oneX
-          npm install
-          npm run build
-        continue-on-error: true
+        run: git clone https://github.com/forever218/hexo-theme-magzine themes/magzine
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
