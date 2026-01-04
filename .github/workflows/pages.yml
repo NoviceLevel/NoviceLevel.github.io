@@ -46,7 +46,7 @@ jobs:
           cd themes/oneX
           npm install
           npm run build
-          cp -r dist/* source/
+          cp -r dist/* ../../source/
 
       - name: Build
         run: pnpm run build
