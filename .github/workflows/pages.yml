@@ -46,7 +46,6 @@ jobs:
           cd themes/oneX
           pnpm install
           pnpm run build
-          node scripts/copy-to-hexo.js
 
       - name: Build
         run: pnpm run build
