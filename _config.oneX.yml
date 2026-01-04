@@ -20,7 +20,7 @@ uiux:
 
 comment:
     disqus:
-        shortName: "xxx"
+        shortName: "novicelevel-github-io"
 
 Drawer:
     - title: 首页
