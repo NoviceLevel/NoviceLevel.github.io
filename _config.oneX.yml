@@ -8,7 +8,7 @@ img:
     right_pic:
       - "/img/right_pic.jpg"
     post_thumbnail: 
-      - "/img/二次元/下雨.jpg"
+      - "https://www.loliapi.com/acg/"
     drawerHeaderBg:
       - "/img/drawerCover.jpg"
 
