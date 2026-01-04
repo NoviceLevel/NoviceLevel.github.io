@@ -29,6 +29,7 @@ jobs:
           git clone https://github.com/EYHN/hexo-theme-one themes/one
           cp -r themes/one/hexo/* themes/one/
           cp themes/one/_config.yml.example themes/one/_config.yml
+          cp _config.one.yml themes/one/_config.yml
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
