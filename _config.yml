@@ -4,12 +4,12 @@
 
 # Site
 title: 幻想贴
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+subtitle: '记录生活与技术的个人博客'
+description: '幻想贴 - 一个分享技术笔记、学习心得与生活感悟的个人博客'
+keywords: 博客,技术,笔记,学习,生活
+author: 幻想贴
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
