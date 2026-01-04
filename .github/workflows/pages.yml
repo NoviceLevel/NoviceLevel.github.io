@@ -28,7 +28,6 @@ jobs:
         run: |
           git clone https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
           cp -r themes/oneX/hexo/* themes/oneX/
-          cp _config.one.yml themes/oneX/_config.yml
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

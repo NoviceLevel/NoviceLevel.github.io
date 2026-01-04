@@ -4,7 +4,7 @@ head:
 img:
     avatar: "https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"
     left_pic: 
-      - "/img/home.jpg"
+      - "/img/home.png"
     right_pic:
       - "/img/right_pic.jpg"
     post_thumbnail: 
