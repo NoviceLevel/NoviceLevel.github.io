@@ -25,7 +25,10 @@ jobs:
           submodules: recursive
 
       - name: Clone Theme
-        run: git clone https://github.com/forever218/hexo-theme-magzine themes/magzine
+        run: |
+          git clone https://github.com/EYHN/hexo-theme-one themes/one
+          cp -r themes/one/hexo/* themes/one/
+          cp themes/one/_config.yml.example themes/one/_config.yml
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
