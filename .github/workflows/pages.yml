@@ -45,7 +45,7 @@ jobs:
         run: |
           cd themes/oneX
           pnpm install
-          pnpm run build:hexo
+          pnpm run build
 
       - name: Build
         run: pnpm run build
