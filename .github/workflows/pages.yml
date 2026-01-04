@@ -46,7 +46,11 @@ jobs:
           cd themes/oneX
           npm install
           npm run build
-          cp -r dist/* ../../source/
+          # Copy dist files except index.html (Hexo uses its own template)
+          cp dist/*.js ../../source/
+          cp dist/*.js.map ../../source/ 2>/dev/null || true
+          cp dist/*.woff2 ../../source/ 2>/dev/null || true
+          cp dist/*.woff ../../source/ 2>/dev/null || true
 
       - name: Build
         run: pnpm run build
