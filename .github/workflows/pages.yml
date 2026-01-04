@@ -27,7 +27,6 @@ jobs:
       - name: Clone Theme
         run: |
           git clone -b angular-rewrite https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
-          cp -r themes/oneX/hexo/* themes/oneX/
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,6 +40,12 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Build Theme
+        run: |
+          cd themes/oneX
+          pnpm install
+          pnpm run build
 
       - name: Build
         run: pnpm run build
