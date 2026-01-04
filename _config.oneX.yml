@@ -9,6 +9,7 @@ img:
       - "/img/right_pic.jpg"
     post_thumbnail: 
       - "https://www.loliapi.com/acg/"
+      - "https://api.paugram.com/wallpaper/?source=sm"
     drawerHeaderBg:
       - "/img/drawerCover.jpg"
 
