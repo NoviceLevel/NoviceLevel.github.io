@@ -27,6 +27,13 @@ jobs:
       - name: Clone Theme
         run: git clone https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
 
+      - name: Build Theme
+        run: |
+          cd themes/oneX
+          npm install
+          npm run build
+        continue-on-error: true
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
