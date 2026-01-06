@@ -4,7 +4,7 @@ head:
 img:
     avatar: "https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"
     left_pic: 
-      - "/img/home.png"
+      - "/img/home.jpg"
     right_pic:
       - "/img/right_pic.jpg"
     post_thumbnail: 
@@ -14,7 +14,7 @@ img:
       - "/img/drawerCover.jpg"
 
 uiux:
-    slogan: "拼命想抓住一些东西！"
+    slogan: "为美好的世界献上祝福！"
     defaultPrimaryColor: "blue"
     defaultAccentColor: "red"
 
@@ -49,5 +49,5 @@ homeToolBar:
         icon: rss_feed
 
 footer:
-  - "Copyright © 2026 幻想贴"
-  - - "拼命想抓住一些东西！"
+  - "Copyright © 2026 KonoSuba"
+  - - "为美好的世界献上祝福！"

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 幻想贴
-subtitle: '记录生活与技术的个人博客'
-description: '幻想贴 - 一个分享技术笔记、学习心得与生活感悟的个人博客'
-keywords: 博客,技术,笔记,学习,生活
-author: 幻想贴
+title: KonoSuba
+subtitle: '为美好的世界献上祝福！'
+description: '这个绝赞的异世界'
+keywords: konosuba, 异世界, 动漫
+author: 佐藤和真
 language: zh-CN
-timezone: Asia/Shanghai
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -102,3 +102,28 @@ theme: oneX
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# RESTful API for oneX theme
+restful:
+  site: true
+  theme: true
+  posts_size: 10
+  posts_props:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    raw: false
+    excerpt: true
+    content: false
+    categories: true
+    tags: true
+    primarycolor: true
+    accentcolor: true
+    thumbnail: true
+  categories: true
+  tags: true
+  post: true
+  page: true
