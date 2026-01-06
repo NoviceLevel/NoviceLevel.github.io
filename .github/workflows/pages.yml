@@ -27,26 +27,13 @@ jobs:
       - name: Clone Theme
         run: |
           git clone -b KonoSuba https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
+          # Use pre-built hexo directory as theme
+          mv themes/oneX/hexo themes/one
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Build Theme
-        run: |
-          cd themes/oneX
-          # Use modern config for Node.js 20 compatibility
-          cp package.modern.json package.json
-          # Remove old .babelrc to avoid babel-preset-es2015 error
-          rm -f .babelrc
-          npm install
-          npm run build
-          # Copy dist files
-          cp dist/*.js ../../source/
-          cp dist/*.js.map ../../source/ 2>/dev/null || true
-          cp dist/*.woff2 ../../source/ 2>/dev/null || true
-          cp dist/*.woff ../../source/ 2>/dev/null || true
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
