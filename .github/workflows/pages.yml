@@ -28,26 +28,23 @@ jobs:
         run: |
           git clone https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
 
-      - name: Setup Node.js 12 for Theme Build
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '20'
 
       - name: Build Theme
         run: |
           cd themes/oneX
+          # Use modern config for Node.js 20 compatibility
+          cp package.modern.json package.json
           npm install
           npm run build
-          # Copy dist files except index.html (Hexo uses its own template)
+          # Copy dist files
           cp dist/*.js ../../source/
           cp dist/*.js.map ../../source/ 2>/dev/null || true
           cp dist/*.woff2 ../../source/ 2>/dev/null || true
           cp dist/*.woff ../../source/ 2>/dev/null || true
-
-      - name: Setup Node.js 20 for Hexo
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
