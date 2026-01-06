@@ -37,9 +37,14 @@ jobs:
         run: |
           cd themes/oneX_repo
           npm install --legacy-peer-deps
-          npm run hexo
-          # Move built theme to correct location
-          mv oneX ../oneX
+          npm run build
+          # Copy built files to oneX theme directory
+          mkdir -p ../oneX/source ../oneX/layout ../oneX/scripts
+          cp -r dist/* ../oneX/source/
+          cp -r hexo/layout/* ../oneX/layout/ 2>/dev/null || cp -r oneX/layout/* ../oneX/layout/
+          cp -r hexo/scripts/* ../oneX/scripts/ 2>/dev/null || cp -r oneX/scripts/* ../oneX/scripts/
+          cp hexo/_config.yml ../oneX/ 2>/dev/null || cp oneX/_config.yml ../oneX/
+          cp hexo/_config.yml.example ../oneX/ 2>/dev/null || cp oneX/_config.yml.example ../oneX/
           cd ..
           rm -rf oneX_repo
           # Debug: list theme files
