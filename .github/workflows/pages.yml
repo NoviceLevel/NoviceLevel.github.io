@@ -38,6 +38,8 @@ jobs:
           cd themes/oneX
           # Use modern config for Node.js 20 compatibility
           cp package.modern.json package.json
+          # Remove old .babelrc to avoid babel-preset-es2015 error
+          rm -f .babelrc
           npm install
           npm run build
           # Copy dist files
