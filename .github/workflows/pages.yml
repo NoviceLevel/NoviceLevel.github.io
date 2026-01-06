@@ -27,17 +27,24 @@ jobs:
       - name: Clone Theme
         run: |
           git clone -b KonoSuba https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX_repo
-          # Use oneX subdirectory as theme
-          mv themes/oneX_repo/oneX themes/oneX
-          rm -rf themes/oneX_repo
-          # Debug: list theme files
-          ls -la themes/oneX/
-          ls -la themes/oneX/source/
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Build Theme
+        run: |
+          cd themes/oneX_repo
+          npm install --legacy-peer-deps
+          npm run hexo
+          # Move built theme to correct location
+          mv oneX ../oneX
+          cd ..
+          rm -rf oneX_repo
+          # Debug: list theme files
+          ls -la themes/oneX/
+          ls -la themes/oneX/source/
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
