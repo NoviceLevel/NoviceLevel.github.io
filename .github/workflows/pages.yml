@@ -26,35 +26,40 @@ jobs:
 
       - name: Clone Theme
         run: |
-          git clone -b KonoSuba https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX_repo
+          git clone https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX_repo
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Build Theme
-        run: |
-          cd themes/oneX_repo
-          npm install --legacy-peer-deps
-          npm run build
-          # Copy built files to oneX theme directory
-          cd ..
-          mkdir -p oneX/source oneX/layout oneX/scripts
-          cp -r oneX_repo/dist/* oneX/source/
-          cp -r oneX_repo/oneX/layout/* oneX/layout/
-          cp -r oneX_repo/oneX/scripts/* oneX/scripts/
-          cp oneX_repo/oneX/_config.yml oneX/
-          cp oneX_repo/oneX/_config.yml.example oneX/
-          rm -rf oneX_repo
-          # Debug: list theme files
-          ls -la oneX/
-          ls -la oneX/source/
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
+
+      - name: Build Theme
+        run: |
+          cd themes/oneX_repo
+          pnpm install
+          pnpm build
+          # Run build-hexo script manually to avoid path issues
+          mkdir -p hexo/source hexo/layout hexo/scripts
+          cp dist/*.js hexo/source/
+          cp dist/*.map hexo/source/ 2>/dev/null || true
+          cp dist/*.woff* hexo/source/ 2>/dev/null || true
+          cp dist/*.ttf hexo/source/ 2>/dev/null || true
+          cp dist/*.eot hexo/source/ 2>/dev/null || true
+          # Create layout from index.html
+          sed 's/<title>.*<\/title>/<title><%= config.title %><\/title>/' dist/index.html > hexo/layout/layout.ejs
+          touch hexo/layout/index.ejs hexo/layout/post.ejs hexo/layout/page.ejs hexo/layout/archive.ejs hexo/layout/category.ejs hexo/layout/tag.ejs
+          # Move to themes directory
+          cd ..
+          mv oneX_repo/hexo oneX
+          rm -rf oneX_repo
+          # Debug
+          ls -la oneX/
+          ls -la oneX/source/
 
       - name: Install Dependencies
         run: pnpm install
