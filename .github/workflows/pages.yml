@@ -28,10 +28,12 @@ jobs:
         run: |
           git clone -b KonoSuba https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX
           # Use pre-built hexo directory as theme
-          mv themes/oneX/hexo themes/one
+          mv themes/oneX/hexo themes/oneX_theme
+          rm -rf themes/oneX
+          mv themes/oneX_theme themes/oneX
           # Debug: list theme files
-          ls -la themes/one/
-          ls -la themes/one/source/
+          ls -la themes/oneX/
+          ls -la themes/oneX/source/
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
