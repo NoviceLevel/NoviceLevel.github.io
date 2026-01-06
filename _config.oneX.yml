@@ -2,16 +2,15 @@ head:
     favicon: "https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"
 
 img:
-    avatar: "https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"
+    avatar: "https://www.loliapi.com/acg/"
     left_pic: 
       - "/img/home.png"
     right_pic:
       - "/img/right_pic.jpg"
     post_thumbnail: 
       - "https://www.loliapi.com/acg/"
-      - "https://api.paugram.com/wallpaper/?source=sm"
     drawerHeaderBg:
-      - "/img/drawerCover.jpg"
+      - "https://www.loliapi.com/acg/"
 
 uiux:
     slogan: "为美好的世界献上祝福！"
@@ -51,3 +50,8 @@ homeToolBar:
 footer:
   - "Copyright © 2026 KonoSuba"
   - - "为美好的世界献上祝福！"
+    - "Explosion！爆裂魔法才是浪漫！"
+    - "我的名字是惠惠！红魔族第一魔法使！"
+    - "一天一发爆裂魔法，身体健康精神爽！"
+    - "吾乃红魔族首屈一指的魔法师，操纵爆裂魔法之人！"
+    - "爆裂魔法是艺术！是美学！是信仰！"
