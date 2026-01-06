@@ -39,17 +39,17 @@ jobs:
           npm install --legacy-peer-deps
           npm run build
           # Copy built files to oneX theme directory
-          mkdir -p ../oneX/source ../oneX/layout ../oneX/scripts
-          cp -r dist/* ../oneX/source/
-          cp -r hexo/layout/* ../oneX/layout/ 2>/dev/null || cp -r oneX/layout/* ../oneX/layout/
-          cp -r hexo/scripts/* ../oneX/scripts/ 2>/dev/null || cp -r oneX/scripts/* ../oneX/scripts/
-          cp hexo/_config.yml ../oneX/ 2>/dev/null || cp oneX/_config.yml ../oneX/
-          cp hexo/_config.yml.example ../oneX/ 2>/dev/null || cp oneX/_config.yml.example ../oneX/
           cd ..
+          mkdir -p oneX/source oneX/layout oneX/scripts
+          cp -r oneX_repo/dist/* oneX/source/
+          cp -r oneX_repo/oneX/layout/* oneX/layout/
+          cp -r oneX_repo/oneX/scripts/* oneX/scripts/
+          cp oneX_repo/oneX/_config.yml oneX/
+          cp oneX_repo/oneX/_config.yml.example oneX/
           rm -rf oneX_repo
           # Debug: list theme files
-          ls -la themes/oneX/
-          ls -la themes/oneX/source/
+          ls -la oneX/
+          ls -la oneX/source/
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
