@@ -46,13 +46,13 @@ jobs:
           cd themes/oneX_repo
           pnpm install
           pnpm build:hexo
-          cd ..
-          # 编译后的主题在 blog/themes/oneX，移动到正确位置
-          mv blog/themes/oneX oneX
-          rm -rf oneX_repo blog
+          cd ../..
+          # 编译后的主题在 themes/oneX_repo 下的 blog/themes/oneX
+          mv themes/oneX_repo/blog/themes/oneX themes/oneX
+          rm -rf themes/oneX_repo
           # Debug
-          ls -la oneX/
-          ls -la oneX/source/
+          ls -la themes/oneX/
+          ls -la themes/oneX/source/
 
       - name: Install Dependencies
         run: pnpm install
