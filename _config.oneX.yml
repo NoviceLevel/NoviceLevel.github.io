@@ -20,7 +20,7 @@ img:
       - "https://www.loliapi.com/acg/"
     # 侧边栏头部背景图
     drawerHeaderBg:
-      - "https://www.loliapi.com/acg/"
+      - "/img/bnr-bakuen.png"
 
 # UI/UX 配置
 uiux:
@@ -49,12 +49,20 @@ Drawer:
       type: hr
     - title: 关于我
       type: page
-      name: 关于我
+      name: about
       icon: account_circle
     - title: 搜索
       type: sitelink
       href: /search/
       icon: search
+    - title: 分类
+      type: sitelink
+      href: /categories
+      icon: folder
+    - title: 标签
+      type: sitelink
+      href: /tags
+      icon: label
 
 # 是否显示颜色选择器
 colorPicker: true

@@ -1,0 +1,69 @@
+# oneX 主题默认配置
+# 用户可在博客根目录创建 _config.oneX.yml 覆盖此配置
+
+# 网站头部配置
+head:
+  favicon: ""
+
+# 图片配置
+img:
+  avatar: "https://www.loliapi.com/acg/"
+  left_pic:
+    - "https://www.loliapi.com/acg/"
+  right_pic:
+    - "https://www.loliapi.com/acg/"
+  post_thumbnail:
+    - "https://www.loliapi.com/acg/"
+  drawerHeaderBg:
+    - "https://www.loliapi.com/acg/"
+
+# UI/UX 配置
+uiux:
+  slogan: "为美好的世界献上祝福！"
+  defaultPrimaryColor: "cyan"
+  defaultAccentColor: "pink"
+
+# 评论系统配置
+comment:
+  disqus:
+    shortName: ""
+
+# 侧边栏菜单配置
+# type: sitelink (站内链接), page (独立页面), link (外部链接), hr (分隔线)
+Drawer:
+  - title: 首页
+    type: sitelink
+    href: /
+    icon: home
+  - title: hr
+    type: hr
+  - title: 搜索
+    type: sitelink
+    href: /search
+    icon: search
+  - title: 分类
+    type: sitelink
+    href: /categories
+    icon: folder
+  - title: 标签
+    type: sitelink
+    href: /tags
+    icon: label
+
+# 是否显示颜色选择器
+colorPicker: true
+
+# 首页工具栏菜单
+homeToolBar:
+  - icon: "more_vert"
+    items:
+      - title: RSS
+        type: link
+        href: /atom.xml
+        icon: rss_feed
+
+# 页脚配置
+footer:
+  - "Copyright © 2026 Your Name"
+  - - "标语1"
+    - "标语2"
