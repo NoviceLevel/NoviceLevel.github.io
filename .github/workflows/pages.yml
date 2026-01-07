@@ -27,6 +27,9 @@ jobs:
       - name: Clone Theme
         run: |
           git clone -b main --depth 1 https://github.com/NoviceLevel/hexo-theme-oneX themes/oneX_repo
+          cd themes/oneX_repo
+          echo "Latest commit:"
+          git log -1 --oneline
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
