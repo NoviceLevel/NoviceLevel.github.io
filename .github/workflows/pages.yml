@@ -43,10 +43,10 @@ jobs:
           cd themes/oneX_repo
           pnpm install
           pnpm build:hexo
-          # Move built theme to correct location
-          mv hexo ../oneX
           cd ..
-          rm -rf oneX_repo
+          # 编译后的主题在 blog/themes/oneX，移动到正确位置
+          mv blog/themes/oneX oneX
+          rm -rf oneX_repo blog
           # Debug
           ls -la oneX/
           ls -la oneX/source/
