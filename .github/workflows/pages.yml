@@ -74,14 +74,12 @@ jobs:
           path: ./public
 
       - name: Deploy to Server
-        uses: burnett01/rsync-deployments@6.0.0
-        with:
-          switches: -avzr --delete
-          path: public/
-          remote_path: /var/www/blog/
-          remote_host: ${{ secrets.SSH_HOST }}
-          remote_user: ${{ secrets.SSH_USER }}
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
+          rsync -avzr --delete -e "ssh -o StrictHostKeyChecking=no" public/ ${{ secrets.SSH_USER }}@[${{ secrets.SSH_HOST }}]:/var/www/blog/
 
   deploy:
     environment:
