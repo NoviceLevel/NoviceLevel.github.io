@@ -73,14 +73,6 @@ jobs:
         with:
           path: ./public
 
-      - name: Deploy to Server
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
-          rsync -avzr --delete -e "ssh -o StrictHostKeyChecking=no" public/ ${{ secrets.SSH_USER }}@[${{ secrets.SSH_HOST }}]:/var/www/blog/
-
   deploy:
     environment:
       name: github-pages
