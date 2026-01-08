@@ -74,14 +74,14 @@ jobs:
           path: ./public
 
       - name: Deploy to Server
-        uses: appleboy/scp-action@v0.1.7
+        uses: burnett01/rsync-deployments@6.0.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "public/*"
-          target: "/var/www/blog"
-          strip_components: 1
+          switches: -avzr --delete
+          path: public/
+          remote_path: /var/www/blog/
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
   deploy:
     environment:
