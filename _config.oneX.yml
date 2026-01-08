@@ -20,7 +20,7 @@ img:
       - "https://www.loliapi.com/acg/"
     # 侧边栏头部背景图
     drawerHeaderBg:
-      - "/img/bnr-bakuen.png"
+      - "/img/bnr-bakuen.jpg"
 
 # UI/UX 配置
 uiux:
