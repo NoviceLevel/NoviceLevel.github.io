@@ -14,13 +14,13 @@ img:
       - "/img/home.png"
     # 首页右侧 Logo 卡片图片
     right_pic:
-      - "/img/right_pic.jpg"
+      - "/img/right_pic.png"
     # 文章缩略图，支持多个随机显示
     post_thumbnail: 
       - "https://www.loliapi.com/acg/"
     # 侧边栏头部背景图
     drawerHeaderBg:
-      - "/img/bnr-bakuen.jpg"
+      - "/img/bnr-bakuen.png"
 
 # UI/UX 配置
 uiux:
@@ -30,6 +30,20 @@ uiux:
     defaultPrimaryColor: "blue"
     # 默认强调色
     defaultAccentColor: "red"
+    # 是否显示全屏加载动画
+    loading: true
+    # 加载动画文字
+    loadingText: "正在施放爆裂魔法..."
+    # 是否显示回到顶部按钮
+    backToTop: true
+    # 是否显示自定义滚动条
+    scrollbar: true
+    # 是否显示文章目录
+    toc: true
+    # 搜索框占位文字
+    searchPlaceholder: "在异世界寻找..."
+    # 404 页面文字
+    notFoundText: "Explosion！页面被惠惠炸没了..."
 
 # 评论系统配置
 comment:
